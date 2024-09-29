@@ -1,0 +1,49 @@
+From 7a8644c9ea13fb379286c9af3db70c0121b1a35b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 8 Sep 2024 11:23:43 +0800
+Subject: [PATCH] install
+
+---
+ Porcupine.pro                    |  8 ++++++++
+ resources/icon/Porcupine.desktop | 11 +++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 resources/icon/Porcupine.desktop
+
+diff --git a/Porcupine.pro b/Porcupine.pro
+index 20389bd..b955879 100644
+--- a/Porcupine.pro
++++ b/Porcupine.pro
+@@ -103,3 +103,11 @@ RESOURCES                               = $$ROOT/resources/resources.qrc
+ win32:RC_ICONS                         += $$ROOT/resources/icon/porcupine.ico
+ #linux-g++:
+ #linux-g++-64:
++
++target.path = $$PREFIX/bin
++desktop.files = resources/icon/Porcupine.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = resources/icon/porcupine.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/resources/icon/Porcupine.desktop b/resources/icon/Porcupine.desktop
+new file mode 100644
+index 0000000..563b76a
+--- /dev/null
++++ b/resources/icon/Porcupine.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=Porcupine
++Name=Porcupine
++Name[zh_CN]=Porcupine
++Icon=porcupine
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=Porcupine
++Version=0.7.20
+\ No newline at end of file
+-- 
+2.43.4
+
